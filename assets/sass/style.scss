@@ -1,0 +1,106 @@
+// Variables
+$font: 'Roboto', sans-serif;
+$colorBlue: #3BAFCE;
+
+html, body{
+	height: 100%;
+	font-family: $font;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+h1, h2,h3,h4,h5,h6,p,ul{
+	padding:0;
+	margin:0;
+	font-family: $font;
+	font-weight: 400;
+}
+a:link, a:visited{
+	text-decoration: none;
+}
+a:hover{text-decoration: underline;}
+
+// Header
+.header{
+	background: $colorBlue;
+	padding: 50px 0 100px 0;
+	color:#fff;
+
+	i {
+		font-size: 50px;
+	}
+
+	h1 {
+    	margin: 30px 0 15px 0;
+		font-size: 50px;
+		font-weight: 700;
+	}
+	h4{
+		color:#d5f3ff;
+		font-size: 20px;
+	}
+}
+
+// Send mail form
+.main {
+	.send-email-form{
+		margin: 40px 0 60px 0;
+		background: #eff7fc;
+		border:1px solid #cce6f6;
+		padding:15px 20px;
+		border-radius: 5px;
+
+		input {
+			height: 50px;
+			font-size: 18px;
+		}
+		.btn{
+			padding: 11px 12px;
+			font-size: 18px;
+		}
+	}
+
+	h2.title-main{
+		font-size: 40px;
+		margin-bottom: 30px;
+	}
+
+	.intro{
+		margin-bottom: 40px;
+		p{
+			font-size: 1.25rem;
+		    color: #737C81;
+		    line-height: 1.35;
+		    margin: 0;
+		}
+
+		.right{
+			a{
+			    text-transform: uppercase;
+			    font-size: .875rem;
+			    color: #a1abb3;
+			    font-weight: 300;
+			    display: block;
+			    margin-bottom: .625rem;
+
+			    span{
+			    	display: block;
+			    	font-size: 14px;
+			    	text-transform: initial;
+			    	color:#337ab7;
+			    }
+			}
+		}
+	}
+
+	.form-area{
+		.panel{
+			.panel-heading{
+				background: #242E35 !important;
+				text-align:center !important;
+				color:#fff !important;
+				font-size: 18px;
+			}
+		}
+	}
+}
