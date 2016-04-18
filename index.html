@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Web Calculator</title>
 
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,500,500italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,100,100italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -81,64 +81,107 @@
 
 				<div class="form-area form-horizontal">
 					<div class="row">
-						<div class="col-md-7">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-							    	Panel title
+						<div class="col-md-6">
+							<div class="input">
+								<div class="heading text-center">
+							    	<h1>Select Bonus Calculator <br>
+							    	Accounting Period</h1>
+							    	<span><b>Status:</b> Completed</span>
 							  	</div>
-							  	<div class="panel-body">
-							    	<div class="row">
-							    		<div class="col-sm-7">Number of Unique Visitors:</div>
-							    		<div class="col-sm-5 e-input">
+							  	<div class="m-body">
+							    	<div class="form-group">
+							    		<label class="control-label">What is the number of unique visitors you receive last month?</label>
+							    		<div class="input-group">
 							    			<input type="text" name="visitor" id="visitor" data-a-dec="," data-a-sep="." class="form-control" />
-							    		</div>
+							    			<div class="input-group-btn">
+												<a class="btn btn-primary" href="">Next</a>    
+											</div>
+							    		</div>		
+							    		
 							    	</div>
-							    	<div class="row">
-							    		<div class="col-sm-7">Total Number of Leads:</div>
-							    		<div class="col-sm-5 e-input">
+							    	<div class="form-group">
+							    		<label class="control-label">How many leads did you receive last month?</label>
+							    		<div class="input-group">
 							    			<input type="text" name="total_leads" id="total_leads" class="form-control" />
+							    			<div class="input-group-btn">
+												<a class="btn btn-primary" href="">Next</a>    
+											</div>
 							    		</div>
 							    	</div>
-							    	<div class="row">
-							    		<div class="col-sm-7">Total Revenue from Expected Sales:</div>
-							    		<div class="col-sm-5 e-input">
+							    	<div class="form-group">
+							    		<label class="control-label">What is the total revenue from sales last month?</label>
+							    		<div class="input-group">
 							    			<input type="text" name="total_exp_sales" id="total_exp_sales" class="form-control" />
+							    			<div class="input-group-btn">
+												<a class="btn btn-primary" href="">Next</a>    
+											</div>
 							    		</div>
 							    	</div>
-							  	</div>
+
+							    	<p class="text-right btn-cal">
+							    		<a class="btn btn-primary">Calculator & Email</a>
+							    	</p>
+
+							    </div>
 							</div>
 						</div>
-						<div class="col-md-5">
-							<div class="panel panel-default panel-result">
-								<div class="panel-heading">Don’t build! It’s not worth it!</div>
-							  	<div class="panel-body">
-							    	<div class="row">
-							    		<div class="col-sm-7">Result 1 is Conversion Rate:</div>
-							    		<div class="col-sm-5 e-input">
-							    			<input type="text" name="result_1" id="result_1" class="form-control" />
-							    		</div>
-							    	</div>
-							    	<div class="row">
-							    		<div class="col-sm-7">Result 2 is Conversion Rate:</div>
-							    		<div class="col-sm-5 e-input">
-							    			<input type="text" name="result_2" id="result_2" class="form-control" />
-							    		</div>
-							    	</div>
-							    	<div class="row">
-							    		<div class="col-sm-7">Result 3 is Lead Value:</div>
-							    		<div class="col-sm-5 e-input">
-							    			<input type="text" name="result_3" id="result_3" class="form-control" />
-							    		</div>
-							    	</div>
-							  	</div>
-							</div>
-
-							<div id="show-alert">
-								<div class="alert alert-warning alert-dismissible" role="alert">
-								 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								 	<strong>Warning!</strong> Better check yourself, you're looking too good.
+						<div class="col-md-6">
+							<div class="output">
+								<div class="heading text-center">
+									Output <span>Calculator</span>
 								</div>
-							</div>		
+							  	<div class="m-body">
+							  		<div class="results">
+							  			<div class="row">
+							  				<div class="col-xs-9">
+							  					<i class="fa fa-usd"></i>
+							  					Consersion Rate:
+							  				</div>
+							  				<div class="col-xs-3">
+							  					<input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s" value="60%">
+							  				</div>
+							  			</div>
+							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  			
+							  		</div>
+							    	<div class="results">
+							  			<div class="row">
+							  				<div class="col-xs-9">
+							  					<i class="fa fa-usd"></i>
+							  					Consersion Rate:
+							  				</div>
+							  				<div class="col-xs-3">
+							  					<input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s" value="60%">
+							  				</div>
+							  			</div>
+							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  		</div>
+							  		<div class="results">
+							  			<div class="row">
+							  				<div class="col-xs-9">
+							  					<i class="fa fa-usd"></i>
+							  					Lead Value:
+							  				</div>
+							  				<div class="col-xs-3">
+							  					<input type="text" class="form-control" id="result_3" data-a-sign="%" data-p-sign="s" value="60%">
+							  				</div>
+							  			</div>
+							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  		</div>
+							  	</div>
+							  	<div class="clearfix"></div>
+
+							  	<p class="last-time text-right">
+							  		<b>Last Calculator on:</b> 20/05/2016 - 01:24 PST
+							  	</p>
+
+							  	<div id="show-alert">
+									<div class="alert alert-success alert-dismissible" role="alert">
+									 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									 	Once the process complete system will email you the download link.
+									</div>
+								</div>	
+							</div>
 
 						</div>
 					</div>

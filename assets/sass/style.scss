@@ -43,7 +43,8 @@ a:hover{text-decoration: underline;}
 
 // Send mail form
 .main {
-	margin-bottom:100px;
+	padding-bottom:100px;
+	background:#f2f2f2;
 	.send-email-form{
 		margin: 40px 0 60px 0;
 		background: #eff7fc;
@@ -95,41 +96,129 @@ a:hover{text-decoration: underline;}
 	}
 
 	.form-area{
-		.panel{
-			.panel-heading{
-				background: #242E35 !important;
-				text-align:center !important;
-				color:#fff !important;
-				font-size: 18px;
-			}
-			.panel-body{
-				.col-sm-7{
-					margin-bottom: 30px;
-					padding-top:5px;
-					font-weight: 500;
-				}
-
-				input{
-					font-size: 17px;
-					font-weight: 500;
-				}
-			}
+		.panel, .panel-heading{
+			border:none;
+			background:#fff;
 		}
-		.panel-result{
-			.panel-heading{
-				background:#E23C3F !important;
-			}
+		.input{
+			background:#FBFCFE;
+			padding:20px 50px;
+			border-radius: 10px 0 0 10px;
 
-			.panel-body{
-				.col-sm-5{
-					input{
+			.heading{
+				margin-bottom:30px;
+				font-weight: 300;
+				h1{
+					font-weight: 300;
+					margin-bottom: 15px;
+				}
+			}
+			.m-body{
+				label{
+					margin-bottom:5px;
+					font-weight: 500;
+				}
+				input{
+					font-size: 20px;
+					height: 40px;
+					font-weight: 500;
+					border:none;
+					/* border-left:2px solid #ccc; */
+					box-shadow:none;
+					border-radius:0;
+
+					&:focus{
 						border:none;
 						box-shadow:none;
-						color:#E23C3F;
+					}
+				}
+
+				.form-group{
+					margin: 25px 0;
+				}
+
+				.input-group-btn{
+					.btn-primary{
+						background:#5A6978;
+						border:none;
+						padding:8px 25px;
+						font-size: 17px;
 					}
 				}
 			}
+
+			.btn-cal{
+				margin-top: 30px;
+				.btn{
+					font-size: 18px;
+    				padding: 10px 30px;
+    				background:#9576EB;
+    				border:none;
+				}
+			}
+	
 		}
+		
+		.output {
+			background:#fff;
+			border-radius:0 10px 10px 0;
+			padding:20px 50px;
+
+			.heading{
+				margin-bottom: 15px;
+				color: #9879ED;
+				font-size: 30px;
+				span{
+					color: #333;
+				}
+			}
+
+			.m-body{
+				.results{
+					margin-bottom:10px;
+					i{
+						color: #9879ED;
+					    border-radius: 50%;
+					    padding: 5px 8px;
+					    font-size: 14px;
+					    margin-right: 20px;
+					    border: 1px solid #9879ED;
+					    vertical-align: middle;
+					    background: #f2f2f2;
+					}
+
+					font-size: 26px;
+					font-weight: 300;
+					color: #5a5a5a;
+
+					input{
+						border:none;
+						box-shadow:none;
+						font-size: 26px;
+						font-weight: 300;
+						color: #5a5a5a;
+						height: auto;
+						padding:0;						
+					}
+
+					label{
+						font-weight: 500;
+						font-size: 16px;
+						margin-left: 50px;
+					}
+				}
+			}
+
+			.last-time {
+				margin-bottom:30px;
+			}
+			.alert-success{
+				background:#FFF6BA;
+				color:#333;
+				font-weight: 500;
+			}	
+		}
+		
 	}
 }
 
