@@ -151,7 +151,7 @@
 							  					<input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s" value="60%">
 							  				</div>
 							  			</div>
-							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  			<label>(<span class="output_sales">0</span> / <span id="output_leads">0</span>)*100</label>
 							  			
 							  		</div>
 							    	<div class="results">
@@ -164,7 +164,7 @@
 							  					<input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s" value="60%">
 							  				</div>
 							  			</div>
-							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  			<label>(<span class="output_sales">0</span> / <span id="output_visitors">0</span>)*100</label>
 							  		</div>
 							  		<div class="results">
 							  			<div class="row">
@@ -176,7 +176,7 @@
 							  					<input type="text" class="form-control" id="result_3" data-a-sign="$" value="60%">
 							  				</div>
 							  			</div>
-							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
+							  			<label>(<span id="output_perCustomer">0</span> * <span class="output_sales">0</span>)/10</label>
 							  		</div>
 							  	</div>
 							  	<div class="clearfix"></div>
@@ -261,6 +261,11 @@
 						getSales = $('#total_exp_sales').autoNumeric('get'),
 						getVisitor = $('#visitor').autoNumeric('get'),
 						getPerCustomer = $('#per_customer').autoNumeric('get');
+
+					$('.output_sales').text(getSales);
+					$('#output_leads').text(getNumberLeads);
+					$('#output_visitors').text(getVisitor);
+					$('#output_perCustomer').text(getPerCustomer);
 
 					$('#result_1').autoNumeric('set', (getSales/getNumberLeads)*100);		
 					$('#result_2').autoNumeric('set', (getSales/getVisitor)*100);		
