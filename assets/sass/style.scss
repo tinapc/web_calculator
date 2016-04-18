@@ -59,6 +59,11 @@ a:hover{text-decoration: underline;}
 		.btn{
 			padding: 11px 12px;
 			font-size: 18px;
+
+			@media (max-width:400px) {
+				font-size: 15px;
+				margin-top: 15px;
+			}
 		}
 	}
 
@@ -84,6 +89,11 @@ a:hover{text-decoration: underline;}
 			    font-weight: 300;
 			    display: block;
 			    margin-bottom: .625rem;
+
+			    @media (max-width:400px) {
+				
+					margin-top: 30px;
+				}
 
 			    span{
 			    	display: block;
@@ -111,12 +121,18 @@ a:hover{text-decoration: underline;}
 				h1{
 					font-weight: 300;
 					margin-bottom: 15px;
+					@media (max-width:400px){
+						font-size: 22px;
+					}
 				}
 			}
 			.m-body{
 				label{
 					margin-bottom:5px;
 					font-weight: 500;
+					@media (max-width:400px){
+						font-size: 12px;
+					}
 				}
 				input{
 					font-size: 20px;
@@ -185,11 +201,21 @@ a:hover{text-decoration: underline;}
 					    border: 1px solid #9879ED;
 					    vertical-align: middle;
 					    background: #f2f2f2;
+
+					    @media (max-width:400px){
+					    	padding: 3px 5px;
+						    font-size: 11px;
+						    margin-right: 8px;
+					    }
 					}
 
 					font-size: 26px;
 					font-weight: 300;
 					color: #5a5a5a;
+
+					@media (max-width:400px) {
+						font-size: 15px;
+					}
 
 					input{
 						border:none;
@@ -198,24 +224,40 @@ a:hover{text-decoration: underline;}
 						font-weight: 300;
 						color: #5a5a5a;
 						height: auto;
-						padding:0;						
+						padding:0;	
+						@media (max-width:400px) {
+							font-size: 15px;
+						}					
 					}
 
 					label{
 						font-weight: 500;
 						font-size: 16px;
 						margin-left: 50px;
+
+						@media (max-width:400px){
+							font-size: 12px;
+    						margin-left: 30px;
+						}
 					}
 				}
 			}
 
 			.last-time {
 				margin-bottom:30px;
+				@media (max-width:400px){
+					font-size: 12px;
+				}
 			}
 			.alert-success{
 				background:#FFF6BA;
 				color:#333;
 				font-weight: 500;
+
+				@media (max-width:400px){
+					font-size: 12px;
+					padding-right:28px !important;
+				}
 			}	
 		}
 		

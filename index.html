@@ -133,11 +133,11 @@
 							  	<div class="m-body">
 							  		<div class="results">
 							  			<div class="row">
-							  				<div class="col-xs-9">
+							  				<div class="col-xs-8">
 							  					<i class="fa fa-usd"></i>
 							  					Consersion Rate:
 							  				</div>
-							  				<div class="col-xs-3">
+							  				<div class="col-xs-4">
 							  					<input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s" value="60%">
 							  				</div>
 							  			</div>
@@ -146,11 +146,11 @@
 							  		</div>
 							    	<div class="results">
 							  			<div class="row">
-							  				<div class="col-xs-9">
+							  				<div class="col-xs-8">
 							  					<i class="fa fa-usd"></i>
 							  					Consersion Rate:
 							  				</div>
-							  				<div class="col-xs-3">
+							  				<div class="col-xs-4">
 							  					<input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s" value="60%">
 							  				</div>
 							  			</div>
@@ -158,11 +158,11 @@
 							  		</div>
 							  		<div class="results">
 							  			<div class="row">
-							  				<div class="col-xs-9">
+							  				<div class="col-xs-8">
 							  					<i class="fa fa-usd"></i>
 							  					Lead Value:
 							  				</div>
-							  				<div class="col-xs-3">
+							  				<div class="col-xs-4">
 							  					<input type="text" class="form-control" id="result_3" data-a-sign="%" data-p-sign="s" value="60%">
 							  				</div>
 							  			</div>
@@ -235,7 +235,9 @@
 		<script type="text/javascript" src="assets/js/autoNumeric.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('#visitor, #total_leads, #total_exp_sales, #result_1, #result_2').autoNumeric('init');
+				$('#visitor, #total_leads, #total_exp_sales, #result_1, #result_2').autoNumeric('init', {
+					aPad: false
+				});
 
 				//$('#visitor').autoNumeric('set', '3000');
 
