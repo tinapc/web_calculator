@@ -148,7 +148,7 @@
 							  					Consersion Rate:
 							  				</div>
 							  				<div class="col-xs-4">
-							  					<input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s" value="60%">
+							  					<input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s" value="0%">
 							  				</div>
 							  			</div>
 							  			<label>(<span class="output_sales">0</span> / <span id="output_leads">0</span>)*100</label>
@@ -161,7 +161,7 @@
 							  					Consersion Rate:
 							  				</div>
 							  				<div class="col-xs-4">
-							  					<input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s" value="60%">
+							  					<input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s" value="0%">
 							  				</div>
 							  			</div>
 							  			<label>(<span class="output_sales">0</span> / <span id="output_visitors">0</span>)*100</label>
@@ -173,7 +173,7 @@
 							  					Lead Value:
 							  				</div>
 							  				<div class="col-xs-4">
-							  					<input type="text" class="form-control" id="result_3" data-a-sign="$" value="60%">
+							  					<input type="text" class="form-control" id="result_3" data-a-sign="$" value="0%">
 							  				</div>
 							  			</div>
 							  			<label>(<span id="output_perCustomer">0</span> * <span class="output_sales">0</span>)/10</label>
@@ -267,9 +267,24 @@
 					$('#output_visitors').text(getVisitor);
 					$('#output_perCustomer').text(getPerCustomer);
 
-					$('#result_1').autoNumeric('set', (getSales/getNumberLeads)*100);		
-					$('#result_2').autoNumeric('set', (getSales/getVisitor)*100);		
-					$('#result_3').autoNumeric('set', (getPerCustomer*getSales)/10);		
+					if (getSales !== '' && getNumberLeads !== '') {
+						$('#result_1').autoNumeric('set', (getSales/getNumberLeads)*100);		
+					} else {
+						$('#result_1').autoNumeric('set', 0);		
+					}
+					if (getSales !== '' && getVisitor !== '') {
+						$('#result_2').autoNumeric('set', (getSales/getVisitor)*100);		
+					} else {
+						$('#result_2').autoNumeric('set', 0);		
+					}
+
+					if (getSales !== '' && getPerCustomer !== '') {
+						$('#result_3').autoNumeric('set', (getPerCustomer*getSales)/10);		
+					} else {
+						$('#result_3').autoNumeric('set', 0);	
+					}
+					
+						
 				});
 			}
 		</script>
