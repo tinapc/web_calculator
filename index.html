@@ -118,6 +118,16 @@
 							    		</div>
 							    	</div>
 
+							    	<div class="form-group">
+							    		<label class="control-label">What's your average revenue per customer?</label>
+							    		<div class="input-group">
+							    			<input type="text" name="per_customer" id="per_customer" data-a-sign="$" class="form-control" />
+							    			<div class="input-group-btn">
+												<a class="btn btn-primary" href="">Next</a>    
+											</div>
+							    		</div>
+							    	</div>
+
 							    	<p class="text-right btn-cal">
 							    		<a class="btn btn-primary">Calculator & Email</a>
 							    	</p>
@@ -163,7 +173,7 @@
 							  					Lead Value:
 							  				</div>
 							  				<div class="col-xs-4">
-							  					<input type="text" class="form-control" id="result_3" data-a-sign="%" data-p-sign="s" value="60%">
+							  					<input type="text" class="form-control" id="result_3" data-a-sign="$" value="60%">
 							  				</div>
 							  			</div>
 							  			<label>Total Number of Leads / Number of Unique <br>Visitors * 100</label>
@@ -235,7 +245,7 @@
 		<script type="text/javascript" src="assets/js/autoNumeric.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('#visitor, #total_leads, #total_exp_sales, #result_1, #result_2').autoNumeric('init', {
+				$('#visitor, #total_leads, #total_exp_sales, #per_customer, #result_1, #result_2, #result_3').autoNumeric('init', {
 					aPad: false
 				});
 
@@ -246,13 +256,15 @@
 			});
 
 			function BuilBuy(){
-				$('#visitor, #total_leads, #total_exp_sales').bind('blur focusout keypress keyup',function() {
+				$('#visitor, #total_leads, #total_exp_sales, #per_customer').bind('blur focusout keypress keyup',function() {
 					var getNumberLeads = $('#total_leads').autoNumeric('get'),
 						getSales = $('#total_exp_sales').autoNumeric('get'),
-						getVisitor = $('#visitor').autoNumeric('get');
+						getVisitor = $('#visitor').autoNumeric('get'),
+						getPerCustomer = $('#per_customer').autoNumeric('get');
 
-					$('#result_1').autoNumeric('set', getSales/getNumberLeads);		
+					$('#result_1').autoNumeric('set', (getSales/getNumberLeads)*100);		
 					$('#result_2').autoNumeric('set', (getSales/getVisitor)*100);		
+					$('#result_3').autoNumeric('set', (getPerCustomer*getSales)/10);		
 				});
 			}
 		</script>
