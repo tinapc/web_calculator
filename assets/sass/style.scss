@@ -43,6 +43,7 @@ a:hover{text-decoration: underline;}
 
 // Send mail form
 .main {
+	margin-bottom:100px;
 	.send-email-form{
 		margin: 40px 0 60px 0;
 		background: #eff7fc;
@@ -100,6 +101,52 @@ a:hover{text-decoration: underline;}
 				text-align:center !important;
 				color:#fff !important;
 				font-size: 18px;
+			}
+			.panel-body{
+				.col-sm-7{
+					margin-bottom: 30px;
+					padding-top:5px;
+					font-weight: 500;
+				}
+
+				input{
+					font-size: 17px;
+					font-weight: 500;
+				}
+			}
+		}
+		.panel-result{
+			.panel-heading{
+				background:#E23C3F !important;
+			}
+
+			.panel-body{
+				.col-sm-5{
+					input{
+						border:none;
+						box-shadow:none;
+						color:#E23C3F;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Footer
+footer{
+	background:#2d3236;
+	padding: 50px 0;
+
+	ul{
+		li{
+			a{
+				color: #8598a7;
+				font-weight: 300;
+				&:hover{
+					text-decoration: none;
+					color:#fff;
+				}
 			}
 		}
 	}
