@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+      <title>Web Calculator</title>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,100,100italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!--Font Awesome-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/landing-style.css">
+      <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div class="main">
+         <br><br>
+         <div class="form-area form-horizontal container">
+            <!-- REMOVE CONTAINER -->
+            <div class="row row-eq-height content border bg-color">
+               <div class="col-md-6 no-padding">
+                  <div class="padding input">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">How much does a qualified business lead worth to you?</h1>
+                     </div>
+                     <div class="m-body">
+                        <div class="form-group">
+                           <label class="control-label">What is the number of unique visitors you receive last month?</label>
+                           <div class="input-group">
+                              <div class="input-group-btn">
+                                 <a data-toggle="popover" title="Find it in Google Analytics" data-content="Select dates from top right corner in Audience Overview (GA) and Check Total Users. Unique Visitors = User"><span class="btn btn-primary" href=""><i class="fa fa-info"></i></span></a>
+                              </div>
+                              <input type="text" name="visitor" id="visitor"  class="form-control" placeholder="400" value="400">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">How many leads did you receive last month?</label>
+                           <div class="input-group">
+                              <!-- <div class="input-group-btn">
+                                 <span class="btn btn-primary" href=""><i class="fa fa-info"></i></span> 
+                              </div> -->
+                              <input type="text" name="total_leads" id="total_leads" class="form-control" placeholder="20" value="20">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">How many leads contributed to sales last month?</label>
+                           <div class="input-group">
+                              <!-- <div class="input-group-btn">
+                                 <span class="btn btn-primary" href=""><i class="fa fa-info"></i></span> 
+                              </div> -->
+                              <input type="text" name="total_exp_sales" id="total_exp_sales" class="form-control" placeholder="2" value="2">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">What's your average revenue per customer?</label>
+                           <div class="input-group">
+                              <!-- <div class="input-group-btn">
+                                 <span class="btn btn-primary" href=""><i class="fa fa-info"></i></span> 
+                              </div> -->
+                              <input type="text" name="per_customer" id="per_customer" data-a-sign="$" class="form-control" placeholder="$150" value="150">
+                           </div>
+                        </div>
+                        <!-- <p class="text-right btn-cal">
+                           <a class="btn btn-primary">Calculator &amp; Email</a>
+                           </p> -->
+                        <br>
+                        <div class="caption"><small>If you don’t know, please make it one of your core marketing KPI’s.</small></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 no-padding">
+                  <div class="padding output">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">Your <span>Results</span></h1>
+                        <span>&nbsp;</span>
+                     </div>
+                     <div class="m-body">
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Visitors-Lead Conversion Rate:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <input type="text" class="form-control" id="result_2" data-a-sign="%" data-p-sign="s">
+                              </div>
+                           </div>
+                           <label><small>= (<span class="output_leads">Number of Lead</span> / <span id="output_visitors">Number of Unique Visitors</span>) * 100</small></label>
+                        </div>
+
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Lead-Sales Conversion Rate:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <input type="text" class="form-control" id="result_1" data-a-sign="%" data-p-sign="s">
+                              </div>
+                           </div>
+                           <label><small>= (<span class="output_sales">Number of Sales</span> / <span class="output_leads">Number of Leads</span>) * 100</small></label>
+                        </div>
+                        
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Average Lead Value:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <input type="text" class="form-control" id="result_3" data-a-sign="$" >
+                              </div>
+                           </div>
+                           <label><small>= <span id="output_perCustomer">Average Revenue Per Customer</span> * <span class="output_lead_sales_conv">Lead-Sales Conversion Rate</span></small></label>
+                        </div>
+                     </div>
+                     <div class="clearfix"></div>
+                     <p class="last-time text-right" style="display:none">
+                        <b>Last Calculator on:</b> 20/05/2016 - 01:24 PST
+                     </p>
+                     <div id="show-alert">
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                           <p id="recommendation">Did you know 96% of visitors, on average, will leave your site without becoming a lead? <br><br>Want strategies to increase conversions? <br><a href="#our-pricing">Click Here to Find out How.</a><br><br><br></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+			<div class="row footer border">
+					<div class="column col-md-12 padding">
+						<div class="logo">
+							<img src="http://www.theproducthackers.com/pascal/wp-content/uploads/2016/04/calcblack.png">
+							<b>Pascal Interactive Content</b>
+						</div>
+					</div>
+				</div>
+         </div>
+      </div>
+	
+      <!-- <footer>
+      </footer> -->
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="assets/js/autoNumeric.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+         	$('#visitor, #total_leads, #total_exp_sales, #per_customer, #result_1, #result_2, #result_3').autoNumeric('init', {
+         		aPad: false
+         	});
+         
+         	
+         	//$('#visitor').autoNumeric('set', '3000');
+         
+         	BuildBuy();
+
+
+         	
+         });
+         
+         function BuildBuy(){
+         	$('#visitor, #total_leads, #total_exp_sales, #per_customer, #recommendation').bind('blur focusout keypress keyup',function() {
+         		var getNumberLeads = $('#total_leads').autoNumeric('get'),
+         			getSales = $('#total_exp_sales').autoNumeric('get'),
+         			getVisitor = $('#visitor').autoNumeric('get'),
+         			getPerCustomer = $('#per_customer').autoNumeric('get');
+         
+
+         		var lead_sales_conv = getSales/getNumberLeads;
+         		$('.output_sales').text(getSales);
+         		$('.output_leads').text(getNumberLeads);
+         		$('#output_visitors').text(getVisitor);
+         		$('#output_perCustomer').text(getPerCustomer);
+         		$('.output_lead_sales_conv').text(lead_sales_conv);
+         
+         		if (getNumberLeads !== '') {
+         			$('#result_1').autoNumeric('set', lead_sales_conv*100);		
+         		} else {
+         			$('#result_1').autoNumeric('set', 0);		
+         		}
+
+         		var result_2 = (getNumberLeads/getVisitor)*100;
+         		if (getVisitor !== '') {
+         			$('#result_2').autoNumeric('set', result_2);	
+         		} else {
+         			$('#result_2').autoNumeric('set', 0);		
+         		}
+         
+         		var result_3 = getPerCustomer*lead_sales_conv;
+         		if (getPerCustomer !== '') {
+         			$('#result_3').autoNumeric('set', result_3);		
+         		} else {
+         			$('#result_3').autoNumeric('set', 0);	
+         		}
+         		
+         		if(getPerCustomer !== '' && result_2 < 4){
+         			$('#recommendation').html('According to Marketo, Inbound strategies, including onsite and offsite SEO and blogging, yielded an average conversion rate of 3.82%. Paid marketing, or online advertising such as search pay-per-click campaigns, resulted in a 2.98% conversion rate on average. Social media clocked in at 1.95%.<br><br> Want strategies to increase your conversions? If Yes, <a href="#our-pricing">Click Here</a>.');
+         		}
+
+         		if(getPerCustomer !== '' && result_3 > 100){
+         			$('#recommendation').html('Calculating lead value can be eye-opening. You might find that you are wasting money generating leads that are too expensive for your company. In that case, reallocate where you are investing in marketing.<br><br> Want strategies to decrease cost per lead? If Yes, <a href="#our-pricing">Click Here</a>.');
+         		}
+
+         		if(getPerCustomer !== '' && result_1 < 20){
+         			$('#recommendation').html('79% of marketing leads will never convert into sales. According to HubSpot, companies with a more mature lead generation process have a 9.3% higher sales quota achievement rate.<br><br> Want strategies to increase your conversions? If Yes, <a href="#our-pricing">Click Here</a>.');
+         		}
+         		// Low Lead Value means you need even higher Conversion Rates to reach your monthly revenue goal! 
+         			
+         	});
+
+			$('[data-toggle="popover"]').popover(); 
+         	$('body').on('click', function (e) {
+			    $('[data-toggle="popover"]').each(function () {
+			        //the 'is' for buttons that trigger popups
+			        //the 'has' for icons within a button that triggers a popup
+			        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+			            $(this).popover('hide');
+			        }
+			    });
+			});
+         }
+      </script>
+      <br><br><br>
+   </body>
+</html>

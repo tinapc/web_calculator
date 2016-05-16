@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+      <title>LTV</title>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,100,100italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!--Font Awesome-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/landing-style.css">
+      <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <style type="text/css">
+         .main .form-area .output .m-body .results{font-size: 13px;}
+         .final_result{font-size: 20px;}
+      </style>
+
+   </head>
+   <body>
+      <div class="main">
+         <br><br>
+         <div class="form-area form-horizontal container">
+            <!-- REMOVE CONTAINER -->
+            <div class="row row-eq-height content border bg-color">
+               <div class="col-md-6 no-padding">
+                  <div class="padding input">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">How to calculate SaaS Expected CAC and LTV?</h1>
+                     </div>
+                     <div class="m-body">
+                        <div class="form-group">
+                           <label class="control-label">How much was your sales and marketing (fully loaded — including salaries) last month?</label>
+                           <div class="input-group">
+                              <div class="input-group-btn">
+                                 <a data-toggle="popover" title="Find it in Google Analytics" data-content="Select dates from top right corner in Audience Overview (GA) and Check Total Users. Unique Visitors = User"><span class="btn btn-primary" href=""><i class="fa fa-info"></i></span></a>
+                              </div>
+                              <input type="text" name="sale_marketing" id="sale_marketing" data-a-sign="$" class="form-control" placeholder="$10000000" value="10000000">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">How many New Customers are you expecting this month? </label>
+                           <div class="input-group">
+                              <input type="text" name="expect_customer" id="expect_customer" class="form-control" placeholder="400" value="400">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">How much you charge your product monthly?</label>
+                           <div class="input-group">
+                              <input type="text" name="monthly" id="monthly" data-a-sign="$" class="form-control" placeholder="$2500" value="2500">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 no-padding">
+                  <div class="padding output">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">Your <span>Results</span></h1>
+                        <span>&nbsp;</span>
+                     </div>
+                     <div class="m-body">
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>ACEC:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div id="result_1" class="final_result" data-a-sign="$"></div>
+                              </div>
+                           </div>
+                           <label><small>= <span class="output_sale_marketing hasNumberic" data-a-sign="$">Sale & Marketing</span> * <span class="output_expect_customer">Ecpecting Customer</span></small></label>
+                        </div>
+
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Expected Payback Period:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div id="result_2" class="final_result" data-a-sign=" months" data-p-sign="s">
+                              </div>
+                           </div>
+                           <label><small>= (<span class="output_ecac hasNumberic" data-a-sign="$">ECAC</span> / (<span class="hasNumberic output_monthly" data-a-sign="$">Montly</span>*12)) * 12 months</small></label>
+                        </div>
+                        
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Expected 1st year ROI in %:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="final_result" id="result_3" data-a-sign="%" data-p-sign="s">
+                              </div>
+                           </div>
+                           <label><small>= ((<span class="output_monthly hasNumberic" data-a-sign="$">Monthly</span> * 12) - <span class="output_ecac hasNumberic" data-a-sign="$">ECAC</span>) / <span class="output_ecac hasNumberic" data-a-sign="$">ECAC</span></small></label>
+                        </div>
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Expected LTV:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="final_result" id="result_4" data-a-sign="$" >
+                              </div>
+                           </div>
+                           <label><small>= 
+                           (<span class="output_monthly hasNumberic" data-a-sign="$">Monthly</span>*12)+(<span class="output_monthly hasNumberic" data-a-sign="$">Monthly</span>*12)*1.15*((1.15^(3year-1year))-1)/(1.15-1)
+                           </small></label>
+                        </div>
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Ratio:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="final_result" id="result_5" data-a-dec="," data-a-sep=".">
+                              </div>
+                           </div>
+                           <label><small>= <span class="output_result_4 hasNumberic" data-a-sign="$">LTVC</span> / <span class="output_monthly hasNumberic" data-a-sign="$">Monthly</span></small></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div></div></div></div>
+            <div class="clearfix"></div>
+            <div class="row footer border">
+               <div class="column col-md-12 padding">
+                  <div class="logo">
+                     <img src="http://www.theproducthackers.com/pascal/wp-content/uploads/2016/04/calcblack.png">
+                     <b>Pascal Interactive Content</b>
+                  </div>
+               </div>
+            </div>
+      </div>
+   
+      <!-- <footer>
+      </footer> -->
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="assets/js/autoNumeric.js"></script>
+      <script type="text/javascript" src="assets/js/cals.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+            $('.hasNumberic, #sale_marketing, #expect_customer, #monthly, #result_1, #result_2, #result_3, #result_4, #result_5').autoNumeric('init', {
+               aPad: false
+            });
+                     
+            cals.build_ltv();
+
+            //Show Tooltip
+            $('[data-toggle="popover"]').popover(); 
+               $('body').on('click', function (e) {
+                $('[data-toggle="popover"]').each(function () {
+                    //the 'is' for buttons that trigger popups
+                    //the 'has' for icons within a button that triggers a popup
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                        $(this).popover('hide');
+                    }
+                });
+            });            
+         });
+      </script>
+      <br><br><br>
+   </body>
+</html>

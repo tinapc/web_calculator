@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+      <title>Marketing Budget</title>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,100,100italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!--Font Awesome-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/landing-style.css">
+      <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <style type="text/css">
+      .main .form-area .output .m-body .results{font-size: 13px;}
+      </style>
+
+   </head>
+   <body>
+      <div class="main">
+         <br><br>
+         <div class="form-area form-horizontal container">
+            <!-- REMOVE CONTAINER -->
+            <div class="row row-eq-height content border bg-color">
+               <div class="col-md-6 no-padding">
+                  <div class="padding input">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">What is your content marketing budget for next year?</h1>
+                     </div>
+                     <div class="m-body">
+                        <div class="form-group">
+                           <label class="control-label">What is your ARR?</label>
+                           <div class="input-group">
+                              <div class="input-group-btn">
+                                 <a data-toggle="popover" title="Find it in Google Analytics" data-content="Select dates from top right corner in Audience Overview (GA) and Check Total Users. Unique Visitors = User"><span class="btn btn-primary" href=""><i class="fa fa-info"></i></span></a>
+                              </div>
+                              <input type="text" name="arr" id="arr" data-a-sign="$" class="form-control" placeholder="$1500000" value="1500000">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">What % growth are you expecting this year?</label>
+                           <div class="input-group">
+                              <input type="text" name="growth" id="growth" data-a-sign="%" data-p-sign="s" class="form-control" placeholder="266%" value="266">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">The revenue growth delta</label>
+                           <div class="input-group">
+                              <input type="text" name="growth_delta" id="growth_delta" data-a-sign="%" data-p-sign="s" class="form-control" placeholder="40%" value="40">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 no-padding">
+                  <div class="padding output">
+                     <div class="heading text-center">
+                        <h1 style="font-size: 35px;">Your <span>Results</span></h1>
+                        <span>&nbsp;</span>
+                     </div>
+                     <div class="m-body">
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Next Year ARR:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div id="result_1" class="final_result" data-a-sign="$"></div>
+                              </div>
+                           </div>
+                           <label><small>= <span class="output_currentArr hasNumberic" data-a-sign="$">Current ARR</span> * <span class="output_growth">% Growth</span></small></label>
+                        </div>
+
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Next Year Marketing Budget:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div id="result_2" class="final_result" data-a-sign="$">
+                              </div>
+                           </div>
+                           <label><small>= <span class="output_nextYearArr hasNumberic" data-a-sign="$">Next Year ARR</span> * <span class="output_growth_delta">revenue growth delta</span></small></label>
+                        </div>
+                        
+                        <div class="results">
+                           <div class="row">
+                              <div class="col-xs-8">
+                                 <i class="fa fa-usd"></i>
+                                 <b>Next Year Content Marketing Budget:</b>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="final_result" id="result_3" data-a-sign="$" >
+                              </div>
+                           </div>
+                           <label><small>= <span class="output_nextYearMarketing hasNumberic" data-a-sign="$">Next Year Content</span> * <span class="output_growth_delta">Growth delta</span></small></label>
+                        </div>
+                     </div>
+                     <div class="clearfix"></div>
+                     <div id="show-alert">
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                           <p id="recommendation">Did you know 96% of visitors, on average, will leave your site without becoming a lead? <br><br>Want strategies to increase conversions? <br><a href="#our-pricing">Click Here to Find out How.</a><br><br><br></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div></div>
+            <div class="clearfix"></div>
+            <div class="row footer border">
+               <div class="column col-md-12 padding">
+                  <div class="logo">
+                     <img src="http://www.theproducthackers.com/pascal/wp-content/uploads/2016/04/calcblack.png">
+                     <b>Pascal Interactive Content</b>
+                  </div>
+               </div>
+            </div>
+      </div>
+	
+      <!-- <footer>
+      </footer> -->
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="assets/js/autoNumeric.js"></script>
+      <script type="text/javascript" src="assets/js/cals.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+         	$('.hasNumberic, #arr, #growth, #growth_delta, #result_1, #result_2, #result_3').autoNumeric('init', {
+         		aPad: false
+         	});
+                  	
+         	cals.build_marketing();
+
+            //Show Tooltip
+            $('[data-toggle="popover"]').popover(); 
+               $('body').on('click', function (e) {
+                $('[data-toggle="popover"]').each(function () {
+                    //the 'is' for buttons that trigger popups
+                    //the 'has' for icons within a button that triggers a popup
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                        $(this).popover('hide');
+                    }
+                });
+            });         	
+         });
+      </script>
+      <br><br><br>
+   </body>
+</html>

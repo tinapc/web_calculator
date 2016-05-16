@@ -1,0 +1,335 @@
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.no-padding{
+  padding:0px;
+  
+    /*border-radius: 0 10px 10px 0;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;*/
+    /*float: none;
+    display: table-cell;*/
+}
+
+.bg-color{
+  /*background: #FBFCFE;*/
+  background: #E0E6F3;
+}
+
+.border{
+  border: 1px solid rgba(128, 128, 128, 0.14)!important;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.main .form-area .row{
+  display: table;
+  width: 100%;
+}
+
+.header {
+  background: #3BAFCE;
+  padding: 50px 0 100px 0;
+  color: #fff;
+}
+.header i {
+  font-size: 50px;
+}
+.header h1 {
+  margin: 30px 0 15px 0;
+  font-size: 50px;
+  font-weight: 700;
+}
+.header h4 {
+  color: #d5f3ff;
+  font-size: 20px;
+}
+
+
+.main .send-email-form {
+  margin: 40px 0 60px 0;
+  background: #eff7fc;
+  border: 1px solid #cce6f6;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+.main .send-email-form input {
+  height: 50px;
+  font-size: 18px;
+}
+.main .send-email-form .btn {
+  padding: 11px 12px;
+  font-size: 18px;
+}
+@media (max-width: 400px) {
+  .main .send-email-form .btn {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+}
+.main h2.title-main {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.main .intro {
+  margin-bottom: 40px;
+}
+.main .intro p {
+  font-size: 1.25rem;
+  color: #737C81;
+  line-height: 1.35;
+  margin: 0;
+}
+.main .intro .right a {
+  text-transform: uppercase;
+  font-size: .875rem;
+  color: #a1abb3;
+  font-weight: 300;
+  display: block;
+  margin-bottom: .625rem;
+}
+@media (max-width: 400px) {
+  .main .intro .right a {
+    margin-top: 30px;
+  }
+}
+.main .intro .right a span {
+  display: block;
+  font-size: 14px;
+  text-transform: initial;
+  color: #337ab7;
+}
+.main .form-area .panel, .main .form-area .panel-heading {
+  border: none;
+  background: #fff;
+}
+.main .form-area .input {
+  border-radius: 10px 0 0 0;
+
+}
+.main .form-area .input .heading {
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+.main .form-area .input .heading h1 {
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+@media (max-width: 400px) {
+  .main .form-area .input .heading h1 {
+    font-size: 22px;
+  }
+}
+.main .form-area .input .m-body label {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+@media (max-width: 400px) {
+  .main .form-area .input .m-body label {
+    font-size: 12px;
+  }
+}
+.main .form-area .input .m-body input {
+  font-size: 20px;
+  height: 40px;
+  font-weight: 500;
+  border: none;
+  text-align: right;
+  /* border-left:2px solid #ccc; */
+  box-shadow: none;
+  border-radius: 0;
+
+}
+.main .form-area .input .m-body input:focus {
+  border: none;
+  box-shadow: 0 1px 0 0 #877DEE inset,0 -1px 0 0 #877DEE inset,1px 0 0 0 #877DEE inset,-1px 0 0 0 #877DEE inset,0 0 4px 0 #877DEE;
+}
+.main .form-area .input .m-body .form-group {
+  margin: 25px 0;
+}
+.main .form-area .input .m-body .input-group {
+  width: 100%;
+}
+.main .form-area .input .m-body .input-group-btn .btn-primary {
+  background: #5A6978;
+  border: none;
+  border-radius: 0px
+  padding: 8px 25px;
+  font-size: 17px;
+}
+.main .form-area .input .btn-cal {
+  margin-top: 30px;
+}
+.main .form-area .input .btn-cal .btn {
+  font-size: 18px;
+  padding: 10px 30px;
+  background: #9576EB;
+  border: none;
+}
+.main .form-area .output {
+  background: #fff;
+  border-radius: 0 10px 0 0;
+  border-left:1px solid rgba(128, 128, 128, 0.14)!important;
+}
+.main .form-area .output .heading {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+.main .form-area .output .heading span {
+  color: #9879ED;
+}
+.main .form-area .output .m-body .results {
+  margin: 32px 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #5a5a5a;
+}
+.main .form-area .output .m-body .results i {
+  color: #9879ED;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 14px;
+  margin-right: 20px;
+  border: 1px solid #9879ED;
+  vertical-align: middle;
+  background: #f2f2f2;
+}
+@media (max-width: 400px) {
+  .main .form-area .output .m-body .results i {
+    padding: 3px 5px;
+    font-size: 11px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 400px) {
+  .main .form-area .output .m-body .results {
+    font-size: 16px;
+  }
+}
+.main .form-area .output .m-body .results input {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-size: 30px;
+  font-weight: 900;
+  color: #5a5a5a;
+  text-align: right;
+  height: auto;
+  padding: 0;
+  margin:-10px;
+}
+@media (max-width: 400px) {
+  .main .form-area .output .m-body .results input {
+    font-size: 15px;
+  }
+}
+.main .form-area .output .m-body .results label {
+  font-weight: initial;
+  font-size: 16px;
+  margin-left: 50px;
+}
+@media (max-width: 400px) {
+  .main .form-area .output .m-body .results label {
+    font-size: 12px;
+    margin-left: 30px;
+  }
+}
+.main .form-area .output .last-time {
+  margin-bottom: 30px;
+}
+@media (max-width: 400px) {
+  .main .form-area .output .last-time {
+    font-size: 12px;
+  }
+}
+.main .form-area .output .alert-success {
+  background: #FFF6BA;
+  color: #333;
+  font-weight: 500;
+}
+@media (max-width: 400px) {
+  .main .form-area .output .alert-success {
+    font-size: 12px;
+    padding-right: 28px !important;
+  }
+}
+
+footer {
+  background: #2d3236;
+  padding: 50px 0;
+}
+footer ul li a {
+  color: #8598a7;
+  font-weight: 300;
+}
+footer ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.main .form-area .input,
+.main .form-area .output{
+
+}
+
+.main .padding{
+  padding: 20px 50px;
+}
+
+.main .form-area .caption{
+  text-align: center;
+}
+
+.main .form-area .content{
+  border-radius: 10px 10px 0 0;
+}
+.main .form-area .footer{
+  border-top:0px;
+  border-radius: 0 0 10px 10px;
+}
+.main .form-area .footer .padding{
+  padding: 1% 50px;
+}
+.main .form-area .logo img{
+  width: 20px;
+}
+.row-eq-height{
+    overflow: hidden; 
+}
+/*
+.row-eq-height > [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}*/
+
+.main .form-area .popover{
+  min-width:250px;   
+}
+.main .form-area .fa{
+  color:#fff;
+}
+.main .form-area .popover-title {
+    font-size: initial;
+    font-weight: bold;
+}
+
+.final_result{
+  font-size:25px;
+  font-weight:900;
+
+}
