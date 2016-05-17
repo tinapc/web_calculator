@@ -60,20 +60,40 @@
 					income = $('#income').autoNumeric('get'),
 					education_level = $('#education_level').val();
 
+				var edu_level_array = [];
+					edu_level_array[1] = 973000;
+					edu_level_array[2] = 1304000;
+					edu_level_array[3] = 1727000;
+					edu_level_array[4] = 2268000;
+					edu_level_array[5] = 2671000;
+					edu_level_array[6] = 3648000;
+
+				var reduce_one_unit_level = Number(education_level) - 1,
+					increase_one_unit_level = Number(education_level) + 1,
+					increase_two_unit_level = Number(education_level) + 2,
+					edu_level_percent = (edu_level_array[education_level] - edu_level_array[reduce_one_unit_level]) / edu_level_array[reduce_one_unit_level],
+					edu_level_1_percent = Math.round((edu_level_array[increase_one_unit_level] - edu_level_array[education_level]) / edu_level_array[education_level]*100),
+					edu_level_2_percent = Math.round((edu_level_array[increase_two_unit_level] - edu_level_array[increase_one_unit_level]) / edu_level_array[increase_one_unit_level]*100);
+
+
+				//console.log(Math.round(edu_level_percent*100));
+				//console.log(Math.round(edu_level_1_percent*100));
+				console.log(edu_level_1_percent);
+
 				var result1 = (retirement_age - age) * (income * expunge_increase);
+				var result2 = result1 * (1 + Number((edu_level_1_percent/100)));
+				var result3 = result1 * (1 + Number((edu_level_1_percent/100)) + Number((edu_level_2_percent/100)));
 
 				$('.output_age').text(age);
 				$('.output_income').autoNumeric('set', income);
-				/*$('.output_ecac').autoNumeric('set', ecac);
-				$('.output_monthly').autoNumeric('set',monthly);
-				$('.output_result_4').autoNumeric('set', result4);*/
+				$('.output_level_1_pecent').autoNumeric('set', edu_level_1_percent);
+				$('.output_level_2_pecent').autoNumeric('set',edu_level_2_percent);
+		
 
 				// Result
 				$('#result_1').autoNumeric('set', result1);
-				/*$('#result_2').autoNumeric('set', result2);
+				$('#result_2').autoNumeric('set', result2);
 				$('#result_3').autoNumeric('set', result3);
-				$('#result_4').autoNumeric('set', result4);
-				$('#result_5').autoNumeric('set', result5)*/
 			});	
 		}
 	};
