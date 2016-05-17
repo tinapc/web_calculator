@@ -49,5 +49,31 @@
 				$('#result_4').autoNumeric('set', result4);
 				$('#result_5').autoNumeric('set', result5)
 			});
+		},
+
+		// Education
+		build_education: function(){
+			$('#age, #education_level, #income').bind('blur focusout keypress keyup change', function(){
+				var expunge_increase = 0.4, //40%
+					retirement_age = 67,
+					age = $('#age').val(),
+					income = $('#income').autoNumeric('get'),
+					education_level = $('#education_level').val();
+
+				var result1 = (retirement_age - age) * (income * expunge_increase);
+
+				$('.output_age').text(age);
+				$('.output_income').autoNumeric('set', income);
+				/*$('.output_ecac').autoNumeric('set', ecac);
+				$('.output_monthly').autoNumeric('set',monthly);
+				$('.output_result_4').autoNumeric('set', result4);*/
+
+				// Result
+				$('#result_1').autoNumeric('set', result1);
+				/*$('#result_2').autoNumeric('set', result2);
+				$('#result_3').autoNumeric('set', result3);
+				$('#result_4').autoNumeric('set', result4);
+				$('#result_5').autoNumeric('set', result5)*/
+			});	
 		}
 	};
